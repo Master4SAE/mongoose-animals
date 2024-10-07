@@ -1,13 +1,13 @@
-import { ObjectId } from "mongodb";
+import { Types } from "mongoose";
 
 type Category = {
-  Category_name: string;
+  category_name: string;
 };
 
 type Species = {
   species_name: string;
   image: string;
-  category: ObjectId;
+  category: Types.ObjectId;
   location: {
     type: "Point";
     coordinates: [number, number]; 
@@ -16,7 +16,7 @@ type Species = {
 type Animal = {
   animal_name: string;
   birthdate: Date;
-  species: ObjectId;
+  species: Types.ObjectId;
   location: {
     type: "Point";
     coordinates: [number, number]; 
