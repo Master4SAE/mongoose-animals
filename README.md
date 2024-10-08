@@ -1,2 +1,2 @@
 # Rest API with typescript + mongo - starter files
-![Alt text](path_to_image)
+![Alt text]Screenshot 2024-10-08 at 19.36.24.png
