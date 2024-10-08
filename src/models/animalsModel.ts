@@ -28,5 +28,20 @@ const fetchAnimals = async () => {
   console.log(animals)
   return animals
 }
-
-export {createAnimal, fetchAnimals}
+const findById = async (id: string) => {
+  const fetchAnimalById = await Animal.findById(id).exec();
+  return fetchAnimalById
+}
+const updateById = async  (id: string, updateData:any) => {
+  const updateAnimalById = await Animal.updateOne({_id: id}, {$set: updateData});
+  console.log(
+    updateAnimalById.matchedCount,
+    updateAnimalById.modifiedCount,
+    updateAnimalById.acknowledged,
+    updateAnimalById.upsertedId,
+    updateAnimalById.upsertedCount,
+    updateData
+  )
+  return updateAnimalById
+}
+export {createAnimal, fetchAnimals, findById, updateById}

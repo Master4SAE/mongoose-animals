@@ -8,9 +8,9 @@ import cors from 'cors';
 import {notFound, errorHandler} from './middlewares';
 import api from './api';
 import {MessageResponse} from './types/Messages';
-import { getCategory, postCategory } from './controllers/categoryController';
-import { getSpecies, postSpecies } from './controllers/speciesController';
-import { getAnimals, postAnimal } from './controllers/animalController';
+import { getCategory, getCategoryById, postCategory } from './controllers/categoryController';
+import { getSpecies, postSpecies, getSpeciesById } from './controllers/speciesController';
+import { getAnimals, postAnimal, getAnimalById, putAnimalById } from './controllers/animalController';
 
 const app = express();
 
@@ -31,6 +31,12 @@ app.post('/postAnimal', postAnimal)
 app.get('/Animals', getAnimals)
 app.get('/Category', getCategory)
 app.get('/Species', getSpecies)
+
+app.get('/Category/:id', getCategoryById)
+app.get('/Animals/:id', getAnimalById)
+app.get('/Species/:id', getSpeciesById)
+
+app.put('/Animals/:id', putAnimalById)
 
 app.use('/api/v1', api);
 

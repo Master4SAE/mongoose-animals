@@ -1,4 +1,4 @@
-import { createSpecies, fetchAllSpecies } from "../models/speciesModel";
+import { createSpecies, fetchAllSpecies, findById } from "../models/speciesModel";
 import {Request, Response} from "express";
 
 const postSpecies = async (req: Request, res: Response) => {
@@ -11,5 +11,10 @@ const getSpecies = async (req: Request, res: Response) => {
     const fetchSpecies = await fetchAllSpecies();
     res.send(fetchSpecies)
 }
+const getSpeciesById = async (req: Request, res: Response) =>{
+    const id = req.params.id
+    const fetchedData = await findById(id)
+    res.send(fetchedData)
+}
 
-export {postSpecies, getSpecies}
+export {postSpecies, getSpecies, getSpeciesById}

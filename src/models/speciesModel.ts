@@ -27,4 +27,8 @@ const fetchAllSpecies = async () =>{
   const fetchSpecies = await species.find({})
   return fetchSpecies
 }
-export {createSpecies, fetchAllSpecies}
+const findById = async (id: string) => {
+  const fetchSpeciesById = await species.findById(id).exec();
+  return fetchSpeciesById
+}
+export {createSpecies, fetchAllSpecies, findById}

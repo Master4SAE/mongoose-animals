@@ -20,4 +20,8 @@ const fetchCategory = async () => {
   console.log(category)
   return category
 }
-export {createCategory, fetchCategory}
+const findById = async (id: string) => {
+  const fetchCategoryById = await Category.findById(id).exec();
+  return fetchCategoryById
+}
+export {createCategory, fetchCategory, findById}
