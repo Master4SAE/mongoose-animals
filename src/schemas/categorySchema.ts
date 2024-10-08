@@ -11,3 +11,4 @@ const categorySchema = new Schema<Category>({
         minlength: 2,
     }
 })
+export {categorySchema}

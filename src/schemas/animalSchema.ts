@@ -1,11 +1,10 @@
-import { ObjectId } from 'mongodb';
 import mongoose from 'mongoose';
 import { Animal } from '../types/Types';
 
 
 const Schema = mongoose.Schema;
 
-const speciesSchema = new Schema<Animal>({
+const animalSchema = new Schema<Animal>({
     animal_name: {
         type: String,
         required: true,
@@ -36,3 +35,4 @@ const speciesSchema = new Schema<Animal>({
         required: true,
     }
 })
+export { animalSchema }

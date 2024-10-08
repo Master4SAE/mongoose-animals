@@ -32,3 +32,4 @@ const speciesSchema = new Schema<Species>({
         }
     }
 })
+export {speciesSchema}
